@@ -5,7 +5,6 @@ require("console.table");
 
 init();
 
-// Display logo text, load main prompts
 function init() {
   const logoText = logo({ name: "Employee Manager" }).render();
 
@@ -44,10 +43,6 @@ async function loadMainPrompts() {
         {
           name: "Update Employee Role",
           value: "UPDATE_EMPLOYEE_ROLE"
-        },
-        {
-          name: "Update Employee Manager",
-          value: "UPDATE_EMPLOYEE_MANAGER"
         },
         {
           name: "View All Roles",
@@ -95,8 +90,6 @@ async function loadMainPrompts() {
       return removeEmployee();
     case "UPDATE_EMPLOYEE_ROLE":
       return updateEmployeeRole();
-    case "UPDATE_EMPLOYEE_MANAGER":
-      return updateEmployeeManager();
     case "VIEW_DEPARTMENTS":
       return viewDepartments();
     case "ADD_DEPARTMENT":
@@ -266,21 +259,6 @@ async function updateEmployeeManager() {
     value: id
   }));
 
-  const { managerId } = await prompt([
-    {
-      type: "list",
-      name: "managerId",
-      message:
-        "Which employee do you want to set as manager for the selected employee?",
-      choices: managerChoices
-    }
-  ]);
-
-  await db.updateEmployeeManager(employeeId, managerId);
-
-  console.log("Updated employee's manager");
-
-  loadMainPrompts();
 }
 
 async function viewRoles() {

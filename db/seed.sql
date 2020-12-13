@@ -3,31 +3,32 @@ use employees;
 INSERT INTO department
     (name)
 VALUES
-    ('Sales'),
-    ('Engineering'),
+    ('Marketing'),
+    ('Product'),
     ('Finance'),
-    ('Legal');
+    ('Legal'),
+    ('Business Development');
 
 INSERT INTO role
     (title, salary, department_id)
 VALUES
-    ('Sales Lead', 100000, 1),
-    ('Salesperson', 80000, 1),
-    ('Lead Engineer', 150000, 2),
-    ('Software Engineer', 120000, 2),
-    ('Account Manager', 160000, 3),
-    ('Accountant', 125000, 3),
+    ('Marketing Manager', 60000, 1),
+    ('Director of Marketing', 120000, 1),
+    ('Senior Product Manager', 150000, 2),
+    ('Software Developer', 100000, 2),
+    ('Director of Business Development', 160000, 5),
+    ('Finance Manager', 125000, 3),
     ('Legal Team Lead', 250000, 4),
     ('Lawyer', 190000, 4);
 
 INSERT INTO employee
     (first_name, last_name, role_id, manager_id)
 VALUES
-    ('John', 'Doe', 1, NULL),
-    ('Mike', 'Chan', 2, 1),
-    ('Ashley', 'Rodriguez', 3, NULL),
-    ('Kevin', 'Tupik', 4, 3),
-    ('Kunal', 'Singh', 5, NULL),
-    ('Malia', 'Brown', 6, 5),
-    ('Sarah', 'Lourd', 7, NULL),
-    ('Tom', 'Allen', 8, 7);
+    ('John', 'Legend', 1, NULL),
+    ('Mike', 'Tyson', 2, 1),
+    ('Ashley', 'Tisdale', 3, NULL),
+    ('Kevin', 'Spacey', 4, 3),
+    ('Kunal', 'Patel', 5, NULL),
+    ('Mila', 'Kuniz', 6, 5),
+    ('Sarah', 'Jessica-Parker', 7, NULL),
+    ('Tom', 'Hanks', 8, 7);
